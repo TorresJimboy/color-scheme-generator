@@ -18,9 +18,21 @@ function getColorScheme() {
                 colorBox.style.backgroundColor = color.hex.value
 
                 colorBox.innerHTML = `
-                    <div>${color.hex.value}</div>
+                    <div class="hex">${color.hex.value}</div>
                     <div class="color-name">${color.name.value}</div>
                 `
+                colorBox.addEventListener("click", function () {
+                    navigator.clipboard.writeText(color.hex.value)
+
+                    const hexDiv = colorBox.querySelector(".hex")
+                    const originalText = hexDiv.textContent
+
+                    hexDiv.textContent = "Copied!"
+
+                    setTimeout(() => {
+                        hexDiv.textContent = originalText
+                    }, 1000)
+                })
 
                 colorsDiv.appendChild(colorBox)
             })

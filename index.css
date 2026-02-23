@@ -50,6 +50,12 @@ body {
     align-items: center;
     font-weight: bold;
     color: white;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.color-box:hover {
+    opacity: 0.85;
 }
 
 .color-name {
