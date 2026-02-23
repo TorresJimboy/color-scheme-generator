@@ -16,7 +16,12 @@ function getColorScheme() {
                 const colorBox = document.createElement("div")
                 colorBox.classList.add("color-box")
                 colorBox.style.backgroundColor = color.hex.value
-                colorBox.textContent = color.hex.value
+
+                colorBox.innerHTML = `
+                    <div>${color.hex.value}</div>
+                    <div class="color-name">${color.name.value}</div>
+                `
+
                 colorsDiv.appendChild(colorBox)
             })
         })
